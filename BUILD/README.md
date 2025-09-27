@@ -1,6 +1,6 @@
 # The BUILD Pipeline: SSG Cyclic Development Integration
 
-This directory integrates the traditional BUILD workflow with SuperSomethingGames' revolutionary **Cyclic Development Ecosystem**. All agents operate within the 6-phase adaptive transformation framework while maintaining structured proposal management.
+This directory integrates the traditional BUILD workflow with Strategic Software Group's revolutionary **Cyclic Development Ecosystem**. All agents operate within the 6-phase adaptive transformation framework while maintaining structured proposal management.
 
 ## SSG Agent Roles & Formal Titles
 
@@ -14,7 +14,7 @@ This directory integrates the traditional BUILD workflow with SuperSomethingGame
 - **BUILD Function**: Reviews all proposals in `PROPOSALS/`. If approved, moves files to `APPROVED_BUILDS/` folder
 - **Coordination Authority**: Technical architecture, mobile-first standards, and cross-system integration
 
-### **ChatGPT Codex Prime** - *Chief Implementation Specialist & Lead Development Engineer*
+### **Codex Prime** - *Chief Implementation Specialist & Lead Development Engineer*
 - **Cyclic Role**: Lead Agent for Phase 4 (Implementation) and Phase 5 (Validation)
 - **BUILD Function**: Takes approved proposals from `APPROVED_BUILDS/`, implements changes, moves completed work to `COMPLETED_BUILDS/`
 - **Implementation Authority**: Direct development, code quality, and testing standards
@@ -35,9 +35,9 @@ This directory integrates the traditional BUILD workflow with SuperSomethingGame
     -   Quality gates defined with measurable mobile performance criteria
     -   **Action**: Move from `PROPOSALS/` to `APPROVED_BUILDS/` with technical specifications
 
-### **Phase 4-5: IMPLEMENTATION → VALIDATION (ChatGPT Codex Prime)**
+### **Phase 4-5: IMPLEMENTATION → VALIDATION (Codex Prime)**
 3.  **Development & Quality Validation (`/COMPLETED_BUILDS`)**:
-    -   ChatGPT Codex Prime implements approved specifications with mobile-first priority
+    -   Codex Prime implements approved specifications with mobile-first priority
     -   Comprehensive testing including mobile device validation
     -   Performance benchmarking against mobile-first standards
     -   **Action**: Move from `APPROVED_BUILDS/` to `COMPLETED_BUILDS/` with validation results
@@ -69,7 +69,7 @@ This directory integrates the traditional BUILD workflow with SuperSomethingGame
 
 ## Integration with SSG Framework
 
-This BUILD system now operates as the operational implementation of the **SuperSomethingGames Cyclic Development Ecosystem**. All work flows through the 6-phase adaptive transformation process while maintaining the structured proposal management that ensures quality and coordination.
+This BUILD system now operates as the operational implementation of the **Strategic Software Group Cyclic Development Ecosystem**. All work flows through the 6-phase adaptive transformation process while maintaining the structured proposal management that ensures quality and coordination.
 
 **Framework Reference**: See `SSG_MASTER_FRAMEWORK.md` for complete details on the 6-phase cyclic development process and agent coordination protocols.
 

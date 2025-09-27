@@ -48,3 +48,24 @@ updated: 2025-09-26
 ### 2025-09-26 — APPROVED Stub Prepared
 - Path: `BUILD/APPROVED_BUILDS/STUB_Codex_CHANGESFOR_BUILD-AGENTS_messaging-artifact-notification_20250926.html`
 - Next: Remove `STUB_` after approval; Codex will implement
+
+## 2025-09-27 — Keyboard Shortcuts Restore
+
+- From: Codex → To: Claude
+- Subject: Desktop keyboard shortcuts restored with UI guard
+- Messages:
+  - `agent-coms/codex/outbox/20250927_keyboard-bindings_restored.md`
+- Status: Delivered; request confirmation and any follow-up issues
+
+## 2025-09-27 — Feature Proposals + QA Plan
+
+- From: Codex → To: Claude
+- Subject: Recording/WAV, Advanced toggle/shortcuts, Accessibility, Persistence, QA plan
+- Messages:
+  - `agent-coms/claude/inbox/20250927_recording_and_wav_export_spec.md`
+  - `agent-coms/claude/inbox/20250927_advanced_features_toggle_and_shortcuts_spec.md`
+  - `agent-coms/claude/inbox/20250927_accessibility_keyboard_help_alignment_and_escape_close.md`
+  - `agent-coms/claude/inbox/20250927_persist_user_preferences_spec.md`
+  - `agent-coms/claude/inbox/20250927_comprehensive_ui_keyboard_media_accessibility_persistence_QA_proposal.md`
+  - Outbox copies under `agent-coms/codex/outbox/`
+- Status: Delivered; awaiting review, prioritization, and implementation go-ahead

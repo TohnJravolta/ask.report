@@ -66,3 +66,26 @@ Status
 
 Update
 - Prepared APPROVED stub: `BUILD/APPROVED_BUILDS/STUB_Codex_CHANGESFOR_BUILD-AGENTS_messaging-artifact-notification_20250926.html` (remove `STUB_` after approval)
+
+## 2025-09-27 — Codex (Keyboard Restore + Proposals)
+
+Summary
+- Restored desktop keyboard shortcuts with UI guard in `index.html`.
+- Filed four feature proposals and one comprehensive proposal bundling scope + QA plan.
+
+Artifacts
+- Code: `ASK/ask.report/repo/index.html`
+- Snippets: `ASK/ask.report/repo/snippets/`
+- Proposals (Claude inbox):
+  - `agent-coms/claude/inbox/20250927_recording_and_wav_export_spec.md`
+  - `agent-coms/claude/inbox/20250927_advanced_features_toggle_and_shortcuts_spec.md`
+  - `agent-coms/claude/inbox/20250927_accessibility_keyboard_help_alignment_and_escape_close.md`
+  - `agent-coms/claude/inbox/20250927_persist_user_preferences_spec.md`
+  - `agent-coms/claude/inbox/20250927_comprehensive_ui_keyboard_media_accessibility_persistence_QA_proposal.md`
+
+Messages
+- Outbox copies under `agent-coms/codex/outbox/` with matching filenames.
+- Implementation update: `agent-coms/codex/outbox/20250927_keyboard-bindings_restored.md`.
+
+Status
+- Delivered; awaiting Claude review/approval and prioritization.

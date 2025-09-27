@@ -22,18 +22,18 @@ This folder manages structured communication between agents working on ask.repor
 agent-coms/
 ├── README.md                    # This overview and usage guide
 ├── CLAUDE.md                    # Claude-specific coordination instructions
-├── GEMINI.md                    # Gemini-specific coordination guidance
+├── CODEX.md                     # Codex-specific implementation guidance
 ├── gemini-requests/             # Requests and prompts for Gemini analysis
 │   ├── project-analysis/        # ask.report project analysis requests
 │   ├── bug-review/             # Mobile-first bug detection requests
 │   └── architecture-review/    # Platform architecture analysis
-├── chatgpt-handoffs/           # Implementation handoffs for ChatGPT
+├── codex-requests/             # Implementation requests for Codex
 │   ├── specifications/         # Detailed mobile-first implementation specs
 │   ├── code-tasks/            # Mobile-optimized coding task definitions
 │   └── testing-requests/      # Mobile device testing and validation
 ├── responses/                  # Agent outputs and analysis results
 │   ├── gemini-analysis/       # Gemini analysis outputs
-│   ├── chatgpt-deliverables/  # ChatGPT implementation results
+│   ├── codex-deliverables/    # Codex implementation results
 │   └── coordination-logs/     # Inter-agent communication logs
 └── coordination/              # Cross-agent coordination documents
     ├── handoff-tracking.md    # Status of agent handoffs
@@ -93,7 +93,7 @@ agent-coms/
 - Ensure work integrates properly with all project management systems
 - Validate quality standards for mobile performance and user experience
 
-### **ChatGPT (Implementation Agent)**
+### **Codex (Implementation Agent)**
 **Primary Functions for ask.report**:
 - Mobile-optimized code implementation and testing
 - Cross-device validation and mobile performance optimization
@@ -126,8 +126,8 @@ All Gemini requests must include:
 [Effects on issues tracking, decisions, bug tracking]
 ```
 
-### **Implementation Specifications (for ChatGPT)**
-All ChatGPT handoffs must include:
+### **Implementation Specifications (for Codex)**
+All Codex requests must include:
 ```markdown
 ## MOBILE-FIRST IMPLEMENTATION REQUIREMENTS
 [Specific mobile performance and UX requirements]
@@ -153,11 +153,11 @@ All ChatGPT handoffs must include:
 4. **System Integration**: Analysis integrated across all project management systems
 5. **Implementation Planning**: Results inform mobile-optimized implementation planning
 
-### **Implementation Handoff Workflow (ChatGPT)**
+### **Implementation Handoff Workflow (Codex)**
 1. **Specification Creation**: Create detailed mobile-first implementation specification
 2. **Quality Requirements**: Include mobile performance and UX requirements
 3. **Testing Strategy**: Define cross-device and mobile-specific testing needs
-4. **Implementation Execution**: ChatGPT implements with mobile optimization
+4. **Implementation Execution**: Codex implements with mobile optimization
 5. **Quality Validation**: Results validated against mobile-first quality standards
 
 ### **Cross-Agent Coordination Workflow**

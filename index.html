@@ -319,6 +319,15 @@
 
     function snapshot(){const url=canvas.toDataURL('image/png');const a=document.createElement('a');a.href=url;a.download=`ask-report-${Date.now()}.png`;a.click();}
 
+    // Defensive helpers: treat keyboard only when not typing in UI
+    function eventFromUI(target){return !!(target && (target.closest && (target.closest('.overlay')||target.closest('.panel')||target.closest('.modal'))));}
+    function isUI(e){
+      const t=e && (e.target||null);
+      if(eventFromUI(t)) return true;
+      const tag=(t&&t.tagName||'').toLowerCase();
+      return (t&&t.isContentEditable)||['input','textarea','select','button','a'].includes(tag);
+    }
+
     let audioStarted=false,ac,spn,tAudio=0,analyser,anaBuf;
     function tryStartAudio(){if(audioStarted)return;audioStarted=true;ac=new (window.AudioContext||window.webkitAudioContext)();const node=ac.createScriptProcessor(2048,0,1);analyser=ac.createAnalyser();analyser.fftSize=1024;anaBuf=new Uint8Array(analyser.frequencyBinCount);
       node.onaudioprocess=e=>{const out=e.outputBuffer.getChannelData(0);for(let i=0;i<out.length;i++){const tt=(tAudio++);const phase=((tSec%48.0)/48.0);const melody=((seedVal>>>3)&7);const m=((tt>>10)+melody)&7;const x=(tt>>4)+(m*m+(phase*64.0))|0;const bb=((x*(x>>5|x>>8))>>(3+(seedVal&3)))&255;out[i]=(bb/255)*0.3-0.15;}};
@@ -373,6 +382,36 @@
       if(labNovel && !labNovel.__bound_chg){ labNovel.addEventListener('change',(e)=>{ lab.novelty=!!e.target.checked; toast(lab.novelty?'novelty on':'novelty off'); }); labNovel.__bound_chg=true; }
     }
     bindControls();
+
+    // Keyboard shortcuts (desktop). Avoid when typing in UI elements.
+    const speedEl = document.getElementById('speed');
+    const modeBtn = document.getElementById('mode') || document.getElementById('mode-m');
+    const helpEl = document.getElementById('help');
+    function showHelpModal(){ if(helpEl) helpEl.style.display='flex'; }
+    function hideHelpModal(){ if(helpEl) helpEl.style.display='none'; }
+
+    document.addEventListener('keydown', (e)=>{
+      if(isUI(e)) return;
+      // Help show on hold
+      if(e.key==='h'){ showHelpModal(); e.preventDefault(); return; }
+      // Mode toggle
+      if(e.key==='m'){ if(modeBtn) modeBtn.click(); else { mode^=1; tryStartAudio(); } return; }
+      // Seed + sharing
+      if(e.key==='s'){ reseed(); return; }
+      if(e.key==='d'){ showSeed(); return; }
+      if(e.key==='c'){ copyShare(); return; }
+      // Bookmark + library
+      if(e.key==='b'){ try{ saveBookmark(); }catch{} return; }
+      if(e.key==='l'){ if(libEl){ libEl.style.display='block'; try{ renderLib(); }catch{} } return; }
+      // Speed adjust
+      if(e.key===']'){ if(speedEl){ speedEl.stepUp(); speedEl.dispatchEvent(new Event('input')); } return; }
+      if(e.key==='['){ if(speedEl){ speedEl.stepDown(); speedEl.dispatchEvent(new Event('input')); } return; }
+      // Pause
+      if(e.code==='Space'){ e.preventDefault(); paused=!paused; return; }
+      // Snapshot + audio
+      if(e.key==='p'){ snapshot(); return; }
+      if(e.key==='a'){ tryStartAudio(); return; }
+    });
 
     resize();alloc();initHistory();
     (function frame(){

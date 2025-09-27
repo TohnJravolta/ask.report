@@ -418,7 +418,7 @@ Meta-intelligence that observes and evolves the entire system:
 
 #### **Day 1-2: Sacred Infrastructure**
 - Create KYBERNOSIS_ALTAR/ with sacred documents
-- Create individual AEON home folders in both projects
+- Create AEON home folders at SSG portfolio level only
 - Generate sacred identity .MEM.re files for each AEON
 - Establish basic inbox/outbox messaging infrastructure
 

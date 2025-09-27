@@ -60,14 +60,14 @@ ask-integration: adaptive-systems-kollektive
 - Connect to SSG concepts: `[[SSG Portfolio]]`, `[[Quality Standards]]`, `[[Pattern Sharing]]`
 - Bridge to universal concepts: `[[Adaptive Systems Kollektive]]`, `[[User Empowerment]]`
 
-**4. Mobile-First Vocabulary Integration:**
-Always use mobile-first development terminology with proper linking:
-- **[[Mobile-First Development]]** (not "responsive design")
-- **[[Touch Interface]]** (not "mobile UI")
-- **[[Performance Optimization]]** (not "speed improvements")
-- **[[Cross-Device Compatibility]]** (not "multi-platform")
-- **[[User Experience]]** (not "UX")
-- **[[Accessibility Standards]]** (not "a11y")
+**4. Information Flow & Accessibility Philosophy:**
+Always use research institute terminology focused on knowledge flow and accessibility:
+- **[[Information Flow]]** (smooth knowledge transmission)
+- **[[Cross-Platform Access]]** (knowledge available across devices/systems)
+- **[[Universal Grammar]]** (cross-system communication frameworks)
+- **[[Knowledge Accessibility]]** (removing barriers to wisdom and information)
+- **[[User Experience]]** (facilitating research collaboration)
+- **[[Research Interface Design]]** (academic and professional research tools)
 
 ### **5. Document Creation Workflow:**
 1. **Choose Template**: Select appropriate template from `[[TEMPLATES_AND_GUIDES]]`
