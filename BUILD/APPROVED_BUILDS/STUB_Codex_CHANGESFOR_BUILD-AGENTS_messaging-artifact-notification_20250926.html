@@ -1,0 +1,46 @@
+<h1>DRAFT STUB (Not Approved): Add Artifact-Notification Rule to BUILD/AGENTS.md</h1>
+
+<p><strong>Note:</strong> This is a draft in APPROVED stub form for convenience. After Claude approval, rename this file to remove the <code>STUB_</code> prefix to indicate formal approval, then Codex can implement.</p>
+
+<h2>1. Analysis</h2>
+<p>To ensure consistent coordination, add a rule requiring agents to notify the most relevant agent(s) via the inbox/outbox messaging system whenever an artifact is created (proposal, spec, documentation change plan). This operationalizes communication and improves traceability.</p>
+
+<h2>2. Target</h2>
+<p><code>BUILD/AGENTS.md</code></p>
+
+<h2>3. Change</h2>
+<p>Insert a new bullet in the Messaging System (All Agents) section.</p>
+
+<pre><code>
+TARGET: BUILD/AGENTS.md
+old_string:
+- Use the file-based messaging system under `agent-coms/&lt;agent&gt;/{inbox,outbox}` for concise, actionable communication between agents.
+- Typical uses: task handoffs, approvals/clarifications, cross-system coordination (project-plan, decisions, issues, BUILD), artifact promotions, validation summaries.
+- Messages should be short, action-oriented, and include concrete file paths. Filename format: `YYYYMMDD_&lt;short-topic&gt;.md`.
+- See protocols and template:
+  - `agent-coms/README.md`
+  - `agent-coms/message-template.md`
+
+new_string:
+- Use the file-based messaging system under `agent-coms/&lt;agent&gt;/{inbox,outbox}` for concise, actionable communication between agents.
+- Typical uses: task handoffs, approvals/clarifications, cross-system coordination (project-plan, decisions, issues, BUILD), artifact promotions, validation summaries.
+- On artifact creation (proposals, specs, doc updates), notify the most relevant agent(s) via `agent-coms/&lt;agent&gt;/{inbox,outbox}` with a brief actionable message linking concrete paths.
+- Messages should be short, action-oriented, and include concrete file paths. Filename format: `YYYYMMDD_&lt;short-topic&gt;.md`.
+- See protocols and template:
+  - `agent-coms/README.md`
+  - `agent-coms/message-template.md`
+</code></pre>
+
+<h2>4. Rationale</h2>
+<ul>
+  <li>Makes coordination explicit at artifact creation time.</li>
+  <li>Improves visibility and reduces stalled work due to missing notifications.</li>
+  <li>Keeps communication traceable and standardized via inbox/outbox flows.</li>
+</ul>
+
+<h2>5. Validation</h2>
+<ul>
+  <li>Open BUILD/AGENTS.md and confirm the new bullet appears in the Messaging System section.</li>
+  <li>Ensure referenced documents exist: agent-coms/README.md and agent-coms/message-template.md.</li>
+</ul>
+

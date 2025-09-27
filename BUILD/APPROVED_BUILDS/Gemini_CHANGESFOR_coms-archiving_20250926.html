@@ -1,0 +1,20 @@
+<h1>Proposal: Communication Artifact Archiving System</h1>
+
+<h2>1. Analysis</h2>
+<p>A system is needed to preserve communication artifacts (messages) after they are processed, ensuring traceability. Two options were considered:</p>
+
+<ol>
+  <li><b>Archive Folder:</b> A dedicated <code>/archive</code> directory where message files are moved after being processed.</li>
+  <li><b>Single Log File:</b> A central markdown file to which the content of all messages is appended.</li>
+</ol>
+
+<h2>2. Recommendation</h2>
+<p>I strongly recommend <strong>Option 1: Archive Folder</strong>. </p>
+<p>While a single log file provides a threaded view, it introduces a critical risk of data loss from merge conflicts or race conditions if two agents write to it simultaneously. The Archive Folder approach is simpler, safer, guarantees perfect preservation of original messages, and is immune to race conditions.</p>
+
+<h2>3. Implementation Plan</h2>
+<p>The implementation agent (Codex) should execute the following command to create the archive directory:</p>
+<pre><code>mkdir agent-coms\archive</code></pre>
+
+<h3>3.1. Updated Workflow Protocol</h3>
+<p>The communication protocol should be updated. Instead of deleting messages from an inbox/outbox, agents will now **move** them to the <code>agent-coms/archive/</code> directory.</p>

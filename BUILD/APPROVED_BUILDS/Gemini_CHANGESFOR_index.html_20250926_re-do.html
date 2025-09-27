@@ -1,0 +1,84 @@
+<h1>Proposal to Fix Mobile Button Functionality</h1>
+
+<h2>Bug Analysis</h2>
+<p>The event listeners for the mobile buttons are failing because they reference variables (like <code>btn</code> for the mode button) that were defined in a global scope and were not correctly handled during the previous refactors. This causes a JavaScript error when the buttons are clicked.</p>
+
+<h2>Proposed Fix</h2>
+<p>I will replace the entire <code>bindControls</code> function and its call with a new, self-contained block of code. This new version binds all events directly and correctly, without relying on a complex, shared-scope function. This is the most robust solution.</p>
+
+<hr>
+
+<h3>Code to be Replaced:</h3>
+<p>The entire <code>bindControls</code> function and its call at the end of the script should be replaced.</p>
+
+<pre><code>
+// OLD CODE TO BE REMOVED
+function bindControls(scope=document){
+  // ... all the broken querySelector calls ...
+}
+bindControls(document);
+
+// hamburger needs to rebind clones
+if(window.__hamburgerRebind) window.__hamburgerRebind();
+</code></pre>
+
+<h3>New Code to Insert:</h3>
+<p>This new, self-contained block of code will be placed at the end of the main simulation script, just before the final <code>})();</code> line.</p>
+
+<pre><code>
+// === START NEW BINDINGS ===
+
+// UI Elements
+const helpModal = document.getElementById('help');
+const logo = document.getElementById('logo');
+const libEl=document.getElementById('lib');
+const labPanel=document.getElementById('lab');
+
+// --- Event Listeners ---
+
+// General
+logo.onclick = ()=>helpModal.style.display='flex';
+document.querySelector('#help .back').addEventListener('click', ()=>helpModal.style.display='none');
+
+// Desktop Buttons
+document.querySelector('#mode').addEventListener('click',()=>{
+  mode^=1;
+  document.querySelector('#mode').textContent = mode ? 'mode: recursive' : 'mode: analytic';
+  document.querySelector('#mode-m').textContent = mode ? 'mode: recursive' : 'mode: analytic';
+  tryStartAudio();
+});
+document.querySelector('#seedbtn').addEventListener('click',showSeed);
+document.querySelector('#copybtn').addEventListener('click',copyShare);
+document.querySelector('#recbtn').addEventListener('click',()=>console.log('rec')); // Placeholder
+document.querySelector('#wavbtn').addEventListener('click',()=>console.log('wav')); // Placeholder
+document.querySelector('#bmbtn').addEventListener('click',()=>{libEl.style.display=(libEl.style.display==='block')?'none':'block';renderLib();});
+document.querySelector('#helpbtn').addEventListener('mousedown',()=>helpModal.style.display='flex');
+document.querySelector('#helpbtn').addEventListener('mouseup',()=>helpModal.style.display='none');
+document.querySelector('#speed').addEventListener('input',e=>{speedFactor=parseFloat(e.target.value)||1;toast(`Speed: ${speedFactor.toFixed(2)}`);});
+document.querySelector('#labbtn').addEventListener('click',()=>{labPanel.style.display=(labPanel.style.display!=='block')?'block':'none';});
+
+// Mobile Buttons
+document.querySelector('#mode-m').addEventListener('click',()=>{
+  mode^=1;
+  document.querySelector('#mode').textContent = mode ? 'mode: recursive' : 'mode: analytic';
+  document.querySelector('#mode-m').textContent = mode ? 'mode: recursive' : 'mode: analytic';
+  tryStartAudio();
+});
+document.querySelector('#seedbtn-m').addEventListener('click',showSeed);
+document.querySelector('#copybtn-m').addEventListener('click',copyShare);
+document.querySelector('#recbtn-m').addEventListener('click',()=>console.log('rec')); // Placeholder
+document.querySelector('#wavbtn-m').addEventListener('click',()=>console.log('wav')); // Placeholder
+document.querySelector('#bmbtn-m').addEventListener('click',()=>{libEl.style.display=(libEl.style.display==='block')?'none':'block';renderLib();});
+document.querySelector('#helpbtn-m').addEventListener('click',()=>helpModal.style.display='flex');
+document.querySelector('#speed-m').addEventListener('input',e=>{speedFactor=parseFloat(e.target.value)||1;toast(`Speed: ${speedFactor.toFixed(2)}`);});
+document.querySelector('#labbtn-m').addEventListener('click',()=>{labPanel.style.display=(labPanel.style.display!=='block')?'block':'none';});
+
+// Lab Panel Controls
+document.querySelector('#labLock').addEventListener('change', e => { lab.locked = e.target.checked; toast(lab.locked?'cyclic_6 locked':'cyclic_6 unlocked'); });
+document.querySelector('#labNovel').addEventListener('change', e => { lab.novelty = e.target.checked; toast(lab.novelty?'novelty on':'novelty off'); });
+
+document.getElementById('speed').value=String(speedFactor);
+document.getElementById('speed-m').value=String(speedFactor);
+
+// === END NEW BINDINGS ===
+</code></pre>

@@ -1,0 +1,32 @@
+<h1>Proposal: Add Messaging Tie-in to decisions/README.md (DADS)</h1>
+
+<h2>1. Analysis</h2>
+<p>DADS coordinates architectural decisions across systems. To ensure decisions are communicated and acted upon efficiently, include an explicit reference to the file-based inbox/outbox messaging system in the DADS integration bullets.</p>
+
+<h2>2. Target</h2>
+<p><code>decisions/README.md</code></p>
+
+<h2>3. Change</h2>
+<p>Replace the existing Agent Coordination bullet with an expanded version that references the messaging system and relevant paths.</p>
+
+<pre><code>
+TARGET: decisions/README.md
+old_string:
+- **Agent Coordination**: Decisions guide agent handoff specifications
+
+new_string:
+- **Agent Coordination**: Decisions guide agent handoff specifications; use agent-coms inbox/outbox messaging for directed notifications and summaries (see `agent-coms/README.md` and `agent-coms/message-template.md`).
+</code></pre>
+
+<h2>4. Rationale</h2>
+<ul>
+  <li>Makes decision coordination actionable with a standard mechanism.</li>
+  <li>Improves traceability via coordination logs and message lifecycle.</li>
+  <li>Aligns decision workflow with BUILD pipeline communication practices.</li>
+</ul>
+
+<h2>5. Validation</h2>
+<ul>
+  <li>Open decisions/README.md and verify the updated bullet in the DADS Integration section.</li>
+  <li>Confirm referenced paths exist in the repository.</li>
+</ul>

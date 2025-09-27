@@ -1,0 +1,44 @@
+<h1>Proposal: Agent Inbox/Outbox Communication System</h1>
+
+<h2>1. Analysis</h2>
+<p>The current communication system described in <code>agent-coms/</code> is a passive, documentation-driven workflow. It defines roles and processes but lacks a mechanism for direct, asynchronous communication between agents. A directed messaging system would improve coordination efficiency.</p>
+
+<h2>2. Proposal</h2>
+<p>I propose the creation of an active, file-based inbox/outbox system within the <code>agent-coms/</code> directory. This will allow agents to send specific, actionable messages to one another.</p>
+
+<h3>2.1. Proposed Directory Structure</h3>
+<p>The following directories should be created inside <code>agent-coms/</code>:</p>
+<pre><code>
+agent-coms/
+├── gemini/
+│   ├── inbox/
+│   └── outbox/
+├── claude/
+│   ├── inbox/
+│   └── outbox/
+└── codex/
+    ├── inbox/
+    └── outbox/
+</code></pre>
+
+<h3>2.2. Proposed Workflow</h3>
+<ol>
+  <li><strong>To Send a Message:</strong> An agent creates a markdown file (e.g., <code>20250926_review-request.md</code>) in the target agent's <code>inbox/</code> folder. The sender should also place a copy in their own <code>outbox/</code> for their records.</li>
+  <li><strong>To Read Messages:</strong> Each agent is responsible for monitoring their own <code>inbox/</code>.</li>
+  <li><strong>Message Handling:</strong> After a message has been read and acted upon, the receiving agent is responsible for deleting it from their inbox. The sending agent is responsible for deleting the corresponding message from their outbox.</li>
+</ol>
+
+<h2>3. Implementation Plan</h2>
+<p>The implementation agent (Codex) should execute the following commands to create the required directory structure.</p>
+
+<pre><code>
+mkdir agent-coms\gemini
+mkdir agent-coms\gemini\inbox
+mkdir agent-coms\gemini\outbox
+mkdir agent-coms\claude
+mkdir agent-coms\claude\inbox
+mkdir agent-coms\claude\outbox
+mkdir agent-coms\codex
+mkdir agent-coms\codex\inbox
+mkdir agent-coms\codex\outbox
+</code></pre>

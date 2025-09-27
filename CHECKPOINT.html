@@ -27,7 +27,7 @@
     @media(max-width:820px){
       .right{display:none;}
       .hamburger{display:flex;}
-      .menu.menu-open{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;background:#0b0b0fef;backdrop-filter:blur(8px);z-index:1000;padding:20px;gap:8px;pointer-events:auto;}
+      .menu.menu-open{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;background:#0b0b0fef;backdrop-filter:blur(8px);z-index:1000;padding:20px;gap:8px;}
       .menu .chip{width:80%;max-width:300px;justify-content:center;padding:12px;font-size:16px;}
     }
 
@@ -324,55 +324,31 @@
       node.onaudioprocess=e=>{const out=e.outputBuffer.getChannelData(0);for(let i=0;i<out.length;i++){const tt=(tAudio++);const phase=((tSec%48.0)/48.0);const melody=((seedVal>>>3)&7);const m=((tt>>10)+melody)&7;const x=(tt>>4)+(m*m+(phase*64.0))|0;const bb=((x*(x>>5|x>>8))>>(3+(seedVal&3)))&255;out[i]=(bb/255)*0.3-0.15;}};
       const src=ac.createScriptProcessor(2048,0,1);src.onaudioprocess=node.onaudioprocess;src.connect(analyser);analyser.connect(ac.destination);spn=src;}
 
-    function bindControls(){
-      const $ = (id)=>document.getElementById(id);
-      const bind = (id, evt, handler, opts)=>{
-        const els=[$(id), $(id+"-m")];
-        for(const el of els){
-          if(!el) continue;
-          const k = `__bound_${evt}`;
-          if(el[k]) continue;
-          el.addEventListener(evt, handler, opts||false);
-          el[k]=true;
-        }
-      };
+    function bindControls(scope=document){
+      scope.querySelector('#mode')?.addEventListener('click',()=>{mode^=1; tryStartAudio();});
+      scope.querySelector('#seedbtn')?.addEventListener('click',showSeed);
+      scope.querySelector('#copybtn')?.addEventListener('click',copyShare);
+      scope.querySelector('#recbtn')?.addEventListener('click',()=>console.log('rec'));
+      scope.querySelector('#wavbtn')?.addEventListener('click',()=>console.log('wav'));
+      scope.querySelector('#bmbtn')?.addEventListener('click',()=>{libEl.style.display=(libEl.style.display==='block')?'none':'block';renderLib();});
+      scope.querySelector('#helpbtn')?.addEventListener('mousedown',()=>showHelp(true));
+      scope.querySelector('#helpbtn')?.addEventListener('mouseup',()=>hideHelp(true));
+      scope.querySelector('#speed')?.addEventListener('input',e=>{speedFactor=parseFloat(e.target.value)||1;toast(`Speed: ${speedFactor.toFixed(2)}`);});
+      scope.querySelector('#labbtn')?.addEventListener('click',()=>{labPanel.style.display=(labPanel.style.display!=='block')?'block':'none';});
+      scope.querySelector('#labLock')?.addEventListener('change',()=>{lab.locked=!!this.checked;toast(lab.locked?'cyclic_6 locked':'cyclic_6 unlocked');});
+      scope.querySelector('#labNovel')?.addEventListener('change',()=>{lab.novelty=!!this.checked;toast(lab.novelty?'novelty on':'novelty off');});
 
-      const helpEl = $('help');
-      const openHelp = ()=>{ if(helpEl) helpEl.style.display='flex'; };
-      const closeHelp = ()=>{ if(helpEl) helpEl.style.display='none'; };
-
-      bind('mode','click',()=>{ mode^=1; tryStartAudio(); });
-      bind('seedbtn','click', ()=>{ try{ showSeed(); }catch{ toast('#'+(seedVal>>>0).toString(36)); }});
-      bind('copybtn','click', ()=>{ try{ copyShare(); }catch{ navigator.clipboard?.writeText?.(location.href); toast('link copied'); }});
-      bind('recbtn','click', ()=>console.log('rec'));
-      bind('wavbtn','click', ()=>console.log('wav'));
-      bind('bmbtn','click', ()=>{ if(typeof libEl!=='undefined' && libEl){ libEl.style.display=(libEl.style.display==='block')?'none':'block'; try{ renderLib(); }catch{} } });
-
-      const helpDesktop=$('helpbtn');
-      if(helpDesktop){
-        if(!helpDesktop.__bound_hold){
-          helpDesktop.addEventListener('mousedown', openHelp);
-          helpDesktop.addEventListener('mouseup', closeHelp);
-          helpDesktop.addEventListener('mouseleave', closeHelp);
-          helpDesktop.__bound_hold=true;
-        }
-      }
-      const helpMobile=$('helpbtn-m');
-      if(helpMobile && !helpMobile.__bound_click){
-        helpMobile.addEventListener('click', openHelp);
-        helpMobile.__bound_click=true;
-      }
-
-      bind('speed','input', (e)=>{ const v=parseFloat(e.target.value)||1; speedFactor=v; toast(`Speed: ${speedFactor.toFixed(2)}`); }, {passive:true});
-
-      bind('labbtn','click', ()=>{ const pnl=$('lab'); if(pnl){ pnl.style.display=(pnl.style.display!=='block')?'block':'none'; } else { toast('lab panel unavailable'); } });
-
-      const labLock=$('labLock');
-      if(labLock && !labLock.__bound_chg){ labLock.addEventListener('change',(e)=>{ lab.locked=!!e.target.checked; toast(lab.locked?'cyclic_6 locked':'cyclic_6 unlocked'); }); labLock.__bound_chg=true; }
-      const labNovel=$('labNovel');
-      if(labNovel && !labNovel.__bound_chg){ labNovel.addEventListener('change',(e)=>{ lab.novelty=!!e.target.checked; toast(lab.novelty?'novelty on':'novelty off'); }); labNovel.__bound_chg=true; }
+      scope.querySelector('#mode-m')?.addEventListener('click',()=>{mode^=1; tryStartAudio();});
+      scope.querySelector('#seedbtn-m')?.addEventListener('click',showSeed);
+      scope.querySelector('#copybtn-m')?.addEventListener('click',copyShare);
+      scope.querySelector('#recbtn-m')?.addEventListener('click',()=>console.log('rec'));
+      scope.querySelector('#wavbtn-m')?.addEventListener('click',()=>console.log('wav'));
+      scope.querySelector('#bmbtn-m')?.addEventListener('click',()=>{libEl.style.display=(libEl.style.display==='block')?'none':'block';renderLib();});
+      scope.querySelector('#helpbtn-m')?.addEventListener('click',()=>showHelp());
+      scope.querySelector('#speed-m')?.addEventListener('input',e=>{speedFactor=parseFloat(e.target.value)||1;toast(`Speed: ${speedFactor.toFixed(2)}`);});
+      scope.querySelector('#labbtn-m')?.addEventListener('click',()=>{labPanel.style.display=(labPanel.style.display!=='block')?'block':'none';});
     }
-    bindControls();
+    bindControls(document);
 
     resize();alloc();initHistory();
     (function frame(){

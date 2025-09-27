@@ -1,0 +1,35 @@
+<h1>Proposal: Add Messaging Integration Note to BUILD/README.md</h1>
+
+<h2>1. Analysis</h2>
+<p>To tie the new inbox/outbox messaging system into the core BUILD docs, add a short integration note to BUILD/README.md that links to agent-coms messaging protocols and the message template. This makes the coordination mechanism discoverable in the main pipeline doc.</p>
+
+<h2>2. Target</h2>
+<p><code>BUILD/README.md</code></p>
+
+<h2>3. Change</h2>
+<p>Replace the trailing summary paragraph with an augmented version that includes a Messaging Integration note.</p>
+
+<pre><code>
+TARGET: BUILD/README.md
+old_string:
+This enhanced process ensures that all changes are strategically analyzed, technically specified, expertly implemented, rigorously validated, and continuously improved through adaptive learning cycles.
+
+new_string:
+This enhanced process ensures that all changes are strategically analyzed, technically specified, expertly implemented, rigorously validated, and continuously improved through adaptive learning cycles.
+
+Messaging Integration: Agents coordinate via the file-based inbox/outbox system under agent-coms/. See agent-coms/README.md and agent-coms/message-template.md for protocols and structure.
+</code></pre>
+
+<h2>4. Rationale</h2>
+<ul>
+  <li>Improves discoverability of the new messaging system.</li>
+  <li>Connects core BUILD pipeline with actionable coordination protocols.</li>
+  <li>Provides clear links to canonical messaging docs.</li>
+  
+</ul>
+
+<h2>5. Validation</h2>
+<ul>
+  <li>Open BUILD/README.md and confirm the new paragraph appears at the end.</li>
+  <li>Verify links/paths exist in the repo.</li>
+</ul>

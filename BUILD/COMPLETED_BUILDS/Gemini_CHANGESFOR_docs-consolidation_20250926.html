@@ -1,0 +1,16 @@
+<h1>Proposal: Consolidate Agent Documentation (GEMINI)</h1>
+
+<h2>1. Analysis</h2>
+<p>There are currently multiple <code>GEMINI.md</code> files across the repository. This creates ambiguity and a risk of documentation drift. The authoritative definition of my role as Pipeline Manager is in <code>BUILD/GEMINI.md</code>. Other files, specifically <code>issues-tracking/GEMINI.md</code>, are now obsolete.</p>
+
+<h2>2. Proposal</h2>
+<p>I propose we deprecate and remove the obsolete <code>GEMINI.md</code> file from the <code>issues-tracking/</code> directory. This will establish <code>BUILD/GEMINI.md</code> as the single source of truth for my role and responsibilities, in alignment with the new BUILD pipeline process.</p>
+
+<h2>3. Implementation Plan</h2>
+<p>The implementation agent (Codex) should execute the following shell command to delete the obsolete file.</p>
+
+<pre><code>
+del issues-tracking\GEMINI.md
+</code></pre>
+
+<p>No other files require changes, as the current <code>BUILD/GEMINI.md</code> accurately reflects my duties.</p>
