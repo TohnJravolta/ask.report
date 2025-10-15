@@ -127,6 +127,11 @@ The ask.report Research Institute serves as the public-facing academic and profe
 
 ## 📚 Knowledge Resources
 
+### **Flagship Frameworks**
+- **[[Entrogenic Core Thesis]]**: The foundational theoretical text for the entire Entrogenic framework.
+- **[[Symbolic Grammar Standards]]**: The official specification for the symbolic notation used in the Entrogenic framework.
+- **[[KYBERNOSIS Master Codex]]**: The operational framework for steering adaptive systems.
+
 ### **Research Library**
 - **Methodology Databases**: Comprehensive research methodology documentation
 - **Findings Archive**: Searchable database of research findings and insights
@@ -136,7 +141,7 @@ The ask.report Research Institute serves as the public-facing academic and profe
 ### **Educational Resources**
 - **Training Materials**: Educational content for researchers and practitioners
 - **Workshop Resources**: Materials for consciousness and systems research workshops
-- **Certification Programs**: Professional development and certification pathways
+-
 - **Academic Integration**: Resources for university and institutional collaboration
 
 ### **Technical Documentation**

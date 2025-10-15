@@ -1,0 +1,59 @@
+Total unique link targets: 144
+Dead links found: 103
+
+=== DEAD LINKS ===
+
+- [[AEGENT]]
+- [[AEON]]
+- [[AEgent]]
+- [[Adaptive Transformation]]
+- [[Advanced Document 1]]
+- [[Advanced Document 2]]
+- [[Collaborative Access]]
+- [[Collaborative Research Division]]
+- [[Collaborative Science]]
+- [[Commons Sense Framework]]
+- [[Concept 1]]
+- [[Concept 2]]
+- [[Consciousness Research]]
+- [[Cross-Agent Collaboration]]
+- [[Cross-Platform Integration]]
+- [[Cross-Scale Integration]]
+- [[Cross-System Communication]]
+- [[Cyclic-6]]
+- [[Data Contribution Guidelines]]
+- [[Data Integration]]
+- [[Data Integrity]]
+- [[Data Systems Division]]
+- [[Division Home Page]]
+- [[Document 1]]
+- [[Document 2]]
+- [[Document Name]]
+- [[Document Name 1]]
+- [[Document Name 2]]
+- [[Dynamic Equilibrium]]
+- [[Ecology Studies Division]]
+- [[Emergent Properties]]
+- [[Emergent Wisdom]]
+- [[Entrogenic Grammar]]
+- [[Entrogenic Research Framework]]
+- [[Ethical Integration]]
+- [[Evolution Readiness]]
+- [[Framework 1]]
+- [[Framework 2]]
+- [[Getting Started Guide]]
+- [[Grounded Spirit Framework]]
+- [[Higher-level framework if applicable]]
+- [[Holistic Analysis]]
+- [[Information Ecosystems]]
+- [[Information Systems]]
+- [[Intelligence Diversity]]
+- [[Kollektive Intelligence]]
+Traceback (most recent call last):
+  File "C:\Users\jarde\Documents\projects\ASK\ask.report\repo\research-knowledge-hub\check_dead_links.py", line 55, in <module>
+    print(f"- [[{link}]]")
+    ~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\jarde\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u014d' in position 10: character maps to <undefined>

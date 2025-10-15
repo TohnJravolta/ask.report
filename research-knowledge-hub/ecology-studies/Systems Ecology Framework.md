@@ -7,7 +7,7 @@ created: 2024-09-27
 updated: 2024-09-27
 public: true
 web-priority: high
-aliases: [Systems Ecology, Ecological Framework, Complex Systems Research]
+aliases: [Systems Ecology, Ecological Framework, Complex Systems Research, Ecology Studies Division]
 description: "Comprehensive framework for studying complex adaptive systems and consciousness ecosystems"
 keywords: [systems ecology, complex systems, adaptive systems, consciousness ecosystems, emergence, information dynamics]
 ---
@@ -25,6 +25,15 @@ The Systems Ecology Framework provides comprehensive methodologies for studying 
 - **[[Emergent Properties]]**: Studying phenomena that arise from complex interactions
 - **[[Dynamic Equilibrium]]**: Analyzing systems in continuous states of adaptive balance
 - **[[Cross-Scale Integration]]**: Connecting patterns across temporal and spatial scales
+
+---
+
+## 📚 Key Documents in this Division
+
+- **[[Consciousness Ecology - Systems and Awareness]]**: A research framework for understanding consciousness as an ecological phenomenon, detailing system dynamics, ecological principles, and models of evolution.
+- **[[Grounded Spirit - Soul and Soil Integration]]**: An ethical-ecological framework that integrates deep spiritual values with practical, material action to drive sustainable transformation.
+- **[[Commons Sense - Integrating Humanity and Technology]]**: An Entrogenic manifesto for a post-extractive world, integrating commons governance (Ostrom), cybernetics (Beer), and resource-based provisioning (Fresco) with principles of sufficiency, stewardship, transparency, and regeneration.
+- **[[Systems Integration - Commons, Cybernetics, and Resource-Based Visions]]**: A research synthesis comparing Ostrom's commons principles, Beer's Viable System Model, and Fresco's resource-based economy, proposing a hybrid governance model with polycentric decision-making, real-time feedback, and equitable provisioning.
 
 ---
 

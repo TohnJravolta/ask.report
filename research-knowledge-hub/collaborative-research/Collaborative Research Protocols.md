@@ -7,7 +7,7 @@ created: 2024-09-27
 updated: 2024-09-27
 public: true
 web-priority: high
-aliases: [Research Collaboration, Collaborative Protocols, Multi-Agent Research]
+aliases: [Research Collaboration, Collaborative Protocols, Multi-Agent Research, Collaborative Research Division]
 description: "Comprehensive protocols for collaborative research across human researchers, digital agents, and hybrid consciousness-technology systems"
 keywords: [collaborative research, research protocols, multi-agent collaboration, collective intelligence, cross-system research]
 ---
@@ -25,6 +25,14 @@ The Collaborative Research Protocols establish comprehensive methodologies for c
 - **[[Methodological Rigor]]**: Maintaining scientific standards across all collaboration types
 - **[[Ethical Integration]]**: Ensuring responsible and fair collaboration practices
 - **[[Emergent Wisdom]]**: Facilitating collective intelligence greater than individual contributions
+
+---
+
+## 📚 Key Documents in this Division
+
+- **[[Synthetic Co-Authorship Protocols]]**: The official research methodology for synthetic co-authorship, detailing the Cyclic-6 process, accountability frameworks, and ethical guidelines for human-AI collaboration.
+- **[[Research Quality Standards]]**: The quality assurance framework for all research produced by the institute, including standards for publication, peer review, validation, and symbolic integrity.
+- **[[ClipCard - High-Risk Decision Protocol]]**: Lightweight, triggered intervention for high-risk operational decisions. Attaches to Kanban, SBAR, ADR, or OODA workflows when Impact × Uncertainty ≥ 18, mandating structured hazard analysis, recheck plans, kill criteria, and blame-safe learning.
 
 ---
 

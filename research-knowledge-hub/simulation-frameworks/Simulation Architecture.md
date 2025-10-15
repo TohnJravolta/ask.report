@@ -7,7 +7,7 @@ created: 2024-09-27
 updated: 2024-09-27
 public: true
 web-priority: high
-aliases: [Simulation Framework, Modeling Architecture, Computational Simulation]
+aliases: [Simulation Framework, Modeling Architecture, Computational Simulation, Simulation Frameworks Division]
 description: "Comprehensive simulation architecture for modeling consciousness, information systems, and collaborative networks"
 keywords: [simulation architecture, computational modeling, complex systems, agent-based modeling, system dynamics, network simulation]
 ---
@@ -25,6 +25,16 @@ The Simulation Architecture provides a comprehensive computational framework for
 - **[[Scalable Computing]]**: Efficient performance across computational scales
 - **[[Real-Time Capability]]**: Support for live simulation and interactive modeling
 - **[[Cross-Platform Integration]]**: Compatibility across diverse computing environments
+
+---
+
+## 📚 Key Documents in this Division
+
+- **[[KYBERNOSIS Master Codex]]**: The master operational framework for steering adaptive systems through the six phases of the Fool's Cycle.
+- **[[NEXUS Codex - Collective Intelligence]]**: The specific protocols and architecture for implementing the NEXUS, the institute's primary framework for collective intelligence.
+- **[[NEXUS Manifesto]]**: The vision and principles document for the NEXUS framework, declaring the core values and philosophy of the collective intelligence system.
+- **[[Kollektive Integration Process]]**: The step-by-step process for integrating a new agent or system into the Kollektive Intelligence framework.
+- **[[The Fool\'s Cycle - Universal Grammar of Change]]**: The theoretical framework for the Fool's Cycle, the six-phase universal grammar of change that underpins all Entrogenic systems.
 
 ---
 

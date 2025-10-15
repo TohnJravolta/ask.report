@@ -7,7 +7,7 @@ created: 2024-09-27
 updated: 2024-09-27
 public: true
 web-priority: high
-aliases: [Data Systems, Information Architecture, Analysis Infrastructure]
+aliases: [Data Systems, Information Architecture, Analysis Infrastructure, Data Systems Division]
 description: "Comprehensive data architecture for consciousness research, ecological analysis, and collaborative science"
 keywords: [data architecture, information systems, data analysis, knowledge management, research infrastructure]
 ---
@@ -25,6 +25,14 @@ The Data Architecture framework provides robust information systems for consciou
 - **[[Scalable Infrastructure]]**: Supporting growth from individual research to planetary-scale analysis
 - **[[Semantic Coherence]]**: Maintaining meaning and context throughout data transformations
 - **[[Collaborative Access]]**: Enabling secure sharing and collaborative analysis across research teams
+
+---
+
+## 📚 Key Documents in this Division
+
+- **[[Information Architecture - Entrogenic Data Standards]]**: The official specification for the Entrogenic information architecture, including metadata standards, citation systems, symbolic notation, and encoding requirements.
+- **[[Data Analysis Frameworks]]**: The official methodology documentation for data analysis, including protocols for quantitative, qualitative, and hybrid analysis, as well as quality standards and validation methods.
+- **[[Tree Pebbling - Memory Optimization and Gradient Flow]]**: Technical research documentation on the Tree Pebbling algorithm for memory optimization in reversible computing environments, with applications to ML activation checkpointing, zero-knowledge proofs, and gradient-based optimization.
 
 ---
 
